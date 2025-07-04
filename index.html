@@ -1,0 +1,403 @@
+<!DOCTYPE html> <!-- Declaração do tipo de documento HTML5 -->
+<html lang="pt-BR"> <!-- Elemento raiz com idioma português brasileiro -->
+<head>
+    <!-- Metadados da página -->
+    <meta charset="UTF-8"> <!-- Codificação de caracteres UTF-8 para suporte a acentos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuração responsiva para dispositivos móveis -->
+    <title>Laís Fátima Siqueira - Portfólio</title> <!-- Título que aparece na aba do navegador -->    
+    <!-- Links para arquivos CSS -->
+    <link rel="stylesheet" href="style-commented.css"> <!-- Arquivo CSS principal do projeto -->
+    <script src="script-commented.js"></script> <!-- Importação do arquivo JavaScript -->
+    <!-- Configuração de fontes do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Pré-conexão para melhor performance -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Pré-conexão com crossorigin -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- Importação da fonte Inter --> 
+    <!-- Biblioteca de ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- CDN do Font Awesome -->
+</head>
+<body> <!-- Início do corpo da página -->
+    
+    <!-- Header com menu e controles de acessibilidade -->
+    <header class="header"> <!-- Cabeçalho principal com classe para estilização -->
+        
+        <!-- Controles de acessibilidade no lado esquerdo -->
+        <div class="accessibility-controls"> <!-- Container para botões de acessibilidade -->
+            <!-- Botão para aumentar/diminuir fonte -->
+            <button id="font-size-btn" class="accessibility-btn" title="Aumentar fonte"> <!-- Botão com ID único e tooltip -->
+                <i class="fas fa-text-height"></i> <!-- Ícone do Font Awesome -->
+            </button>
+            <!-- Botão para alternar tema claro/escuro -->
+            <button id="theme-toggle-btn" class="accessibility-btn" title="Alternar tema"> <!-- Botão com ID único e tooltip -->
+                <i class="fas fa-moon"></i> <!-- Ícone de lua para tema escuro -->
+            </button>
+        </div>
+        
+        <!-- Navegação principal -->
+        <nav class="main-nav"> <!-- Tag semântica de navegação -->
+            <!-- Menu de navegação -->
+            <ul class="nav-menu"> <!-- Lista não ordenada para o menu -->
+                <li><a href="#home" class="nav-link">Home</a></li> <!-- Link para seção home -->
+                <li><a href="#sobre" class="nav-link">Sobre</a></li> <!-- Link para seção sobre -->
+                <li><a href="#competencias" class="nav-link">Competências</a></li> <!-- Link para seção sobre -->
+                <li><a href="#linguagensetecnologias" class="nav-link">Linguagens e Tecnologias</a></li> <!-- Link para seção sobre -->
+                <li><a href="#contato" class="nav-link">Contato</a></li> <!-- Link para seção contato -->
+            </ul>
+            <!-- Menu hamburger para dispositivos móveis -->
+            <div class="hamburger"> <!-- Container do menu hamburger -->
+                <span></span> <!-- Primeira linha do hamburger -->
+                <span></span> <!-- Segunda linha do hamburger -->
+                <span></span> <!-- Terceira linha do hamburger -->
+                <span></span> <!-- Quarta linha do hamburger -->
+                <span></span> <!-- Quinta linha do hamburger -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Seção Home (página inicial) -->
+    <section id="home" class="home-section"> <!-- Seção principal com ID para navegação -->
+        <div class="container"> <!-- Container para centralizar conteúdo -->
+            <div class="home-content"> <!-- Grid container para layout em duas colunas -->
+                <!-- Coluna de texto -->
+                <div class="home-text"> <!-- Container do texto principal -->
+                    <h1 class="fluid">Lais<br/><span class="last-name">Siqueira</span></h1>
+                    <h2 class="welcome-subtitle">Bem-vindo ao meu portfólio!</h2> <!-- Subtítulo (H2) -->
+                    <p class="home-description">Desenvolvedora em formação apaixonada por tecnologia e inovação</p> <!-- Descrição -->
+                </div>                
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="about-section"> <!-- Seção sobre com ID para navegação -->
+        <div class="container"> <!-- Container para centralizar conteúdo -->
+            <div class="about-content"> <!-- Grid container para layout -->
+                <!-- Coluna de texto -->
+                <div class="about-text"> <!-- Container do texto sobre -->
+                    <h2 class="section-title">Sobre Mim</h2> <!-- Título da seção -->
+                    <h3 class="section-subtitle">Ciências da Computação</h3> <!-- Subtítulo da seção -->
+                    <!-- Parágrafo com informações pessoais -->
+                    <p class="about-description">
+                        Sou gaúcha de Passo Fundo, em transição de carreira na área da informática. 
+                        Fiz minha primeira faculdade em 2009 em Ciências Biológicas e este ano iniciei 
+                        meus estudos na área de Ciências da Computação, ambas na Universidade de Passo Fundo. 
+                        Sou apaixonada por animais, tenho uma shih tzu e três gatos. Meus hobbies preferidos 
+                        são a leitura, ouvir música, assistir a podcast diversos, viajar e fazer websites.
+                    </p>
+                    <!-- Links para redes sociais -->
+                    <div class="social-links"> <!-- Container dos links sociais -->
+                        <a href="https://github.com/laisfsiqueira" class="social-link" title="GitHub"> <!-- Link do GitHub -->
+                            <i class="fab fa-github"></i> <!-- Ícone do GitHub -->
+                        </a>
+                        <a href="https://www.instagram.com/laissiqueiraoficial/" class="social-link" title="Instagram"> <!-- Link do Instagram -->
+                            <i class="fab fa-instagram"></i> <!-- Ícone do Instagram -->
+                        </a>
+                        <a href="https://www.linkedin.com/in/la%C3%ADs-f%C3%A1tima-siqueira-pcd-a8737818b/" class="social-link" title="LinkedIn"> <!-- Link do LinkedIn -->
+                            <i class="fab fa-linkedin"></i> <!-- Ícone do LinkedIn -->
+                        </a>
+                    </div>
+                </div>
+                <!-- Coluna da foto -->
+                <div>
+                    <img src="lais.jpg" height="250px" weight="250px" class="about-image"> <!-- Container da imagem sobre -->                  
+                </div>
+            </div>
+    </section>
+
+    <!-- Seção Habilidades Detalhadas -->
+    <section id="detailed-skills" class="detailed-skills-section"> <!-- Seção de habilidades detalhadas -->
+        <div class="container_competencias"> <!-- Container para centralizar conteúdo -->
+            <h2 class="section-title-competencia">Competências e Habilidades</h2> <!-- Título da seção -->
+            <div class="skills-grid"> <!-- Grid de três colunas -->
+                
+                <!-- Coluna 1: Habilidades Técnicas -->
+                <div class="skill-category technical-skills"> <!-- Card de habilidades técnicas -->
+                    <h3 class="category-title">Habilidades Técnicas</h3> <!-- Título da categoria -->
+                    
+                    <!-- HTML -->
+                    <div class="skill-item-detailed"> <!-- Item de habilidade -->
+                        <div class="skill-header"> <!-- Cabeçalho da habilidade -->
+                            <span class="skill-name">HTML</span> <!-- Nome da habilidade -->
+                            <span class="skill-percentage">30%</span> <!-- Porcentagem -->
+                        </div>
+                        <div class="skill-description">HTML5, Semântica, Acessibilidade</div> <!-- Descrição -->
+                        <div class="progress-bar"> <!-- Barra de progresso -->
+                            <div class="progress-fill" data-percentage="75"></div> <!-- Preenchimento -->
+                        </div>
+                    </div>
+                    
+                    <!-- CSS -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">CSS</span>
+                            <span class="skill-percentage">20%</span>
+                        </div>
+                        <div class="skill-description">Flexbox, Grid, Animações, Responsividade</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="80"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- JavaScript -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">10%</span>
+                        </div>
+                        <div class="skill-description">ES6+, DOM, Async/Await, APIs</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="70"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Python -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percentage">20%</span>
+                        </div>
+                        <div class="skill-description">Django, Flask, Data Science, Automação</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="65"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coluna 2: Ferramentas e Métodos -->
+                <div class="skill-category tools-methods"> <!-- Card de ferramentas -->
+                    <h3 class="category-title">Ferramentas e Métodos</h3>
+                    
+                    <!-- Git/GitHub -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">Git/GitHub</span>
+                            <span class="skill-percentage">40%</span>
+                        </div>
+                        <div class="skill-description">Controle de versão, Colaboração</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="85"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- VS Code -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">VS Code</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-description">Extensões, Debugging, Produtividade</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="90"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Figma -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">Figma</span>
+                            <span class="skill-percentage">20%</span>
+                        </div>
+                        <div class="skill-description">Design UI/UX, Prototipagem</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="60"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Metodologias Ágeis -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">Metodologias Ágeis</span>
+                            <span class="skill-percentage">5%</span>
+                        </div>
+                        <div class="skill-description">Scrum, Kanban, Sprints</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="70"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coluna 3: Soft Skills -->
+                <div class="skill-category soft-skills"> <!-- Card de soft skills -->
+                    <h3 class="category-title">Soft Skills</h3>
+                    
+                    <!-- Comunicação -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">Comunicação Efetiva</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-description">Clareza, Empatia, Escuta Ativa</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="85"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Trabalho em Equipe -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">Trabalho em Equipe</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-description">Colaboração, Sinergia, Apoio Mútuo</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="90"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Resolução de Problemas -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">Resolução de Problemas</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-description">Análise, Criatividade, Persistência</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="80"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Adaptabilidade -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">Adaptabilidade</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-description">Flexibilidade, Aprendizado Contínuo</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="85"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pensamento Crítico -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">Pensamento Crítico</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-description">Análise, Questionamento, Lógica</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="75"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gestão de Tempo -->
+                    <div class="skill-item-detailed">
+                        <div class="skill-header">
+                            <span class="skill-name">Gestão de Tempo</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-description">Priorização, Organização, Foco</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="70"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Skills (Habilidades) -->
+    <section id="skills" class="skills-section"> <!-- Seção de habilidades -->
+        <div class="container"> <!-- Container para centralizar conteúdo -->
+            <h2 class="section-title">Linguagens & Tecnologias</h2> <!-- Título da seção -->
+            <!-- Carrossel de habilidades -->
+            <div class="skills-carousel"> <!-- Container do carrossel -->
+                <!-- Item de habilidade: Python -->
+                <div class="skill-item" data-skill="python"> <!-- Item com data attribute -->
+                    <i class="fab fa-python"></i> <!-- Ícone do Python -->
+                    <span>Python</span> <!-- Nome da linguagem -->
+                </div>
+                <!-- Item de habilidade: JavaScript -->
+                <div class="skill-item" data-skill="javascript">
+                    <i class="fab fa-js-square"></i> <!-- Ícone do JavaScript -->
+                    <span>JavaScript</span>
+                </div>
+                <!-- Item de habilidade: HTML5 -->
+                <div class="skill-item" data-skill="html5">
+                    <i class="fab fa-html5"></i> <!-- Ícone do HTML5 -->
+                    <span>HTML5</span>
+                </div>
+                <!-- Item de habilidade: CSS3 -->
+                <div class="skill-item" data-skill="css3">
+                    <i class="fab fa-css3-alt"></i> <!-- Ícone do CSS3 -->
+                    <span>CSS3</span>
+                </div>
+                <!-- Item de habilidade: SQL -->
+                <div class="skill-item" data-skill="sql">
+                    <i class="fas fa-database"></i> <!-- Ícone de banco de dados -->
+                    <span>SQL</span>
+                </div>
+                <!-- Item de habilidade: Java -->
+                <div class="skill-item" data-skill="java">
+                    <i class="fab fa-java"></i> <!-- Ícone do Java -->
+                    <span>Java</span>
+                </div>
+                <!-- Item de habilidade: C++ -->
+                <div class="skill-item" data-skill="cpp">
+                    <i class="fas fa-code"></i> <!-- Ícone genérico de código -->
+                    <span>C++</span>
+                </div>
+                <!-- Item de habilidade: C -->
+                <div class="skill-item" data-skill="c">
+                    <i class="fas fa-code"></i> <!-- Ícone genérico de código -->
+                    <span>C</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="contact-section"> <!-- Seção de contato -->
+        <div class="container"> <!-- Container para centralizar conteúdo -->
+            <div class="contact-content"> <!-- Grid container para layout -->
+                <!-- Coluna da imagem -->
+                <div class="contact-image"> <!-- Container da imagem de contato -->
+                    <img src="tech-contact.png" alt="Tecnologia contato" class="contact-tech-image"> <!-- Imagem decorativa -->
+                </div>
+                <!-- Coluna do formulário -->
+                <div class="contact-form-container"> <!-- Container do formulário -->
+                    <h2 class="section-title">Entre em Contato</h2> <!-- Título da seção -->
+                    <!-- Formulário de contato -->
+                    <form class="contact-form" id="contactForm"> <!-- Formulário com ID para JavaScript -->
+                        <!-- Campo Nome -->
+                        <div class="form-group"> <!-- Grupo do campo -->
+                            <label for="name">Nome</label> <!-- Label do campo -->
+                            <input type="text" id="name" name="name" required> <!-- Input obrigatório -->
+                        </div>
+                        <!-- Campo E-mail -->
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required> <!-- Input de email obrigatório -->
+                        </div>
+                        <!-- Campo Mensagem -->
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea> <!-- Textarea obrigatório -->
+                        </div>
+                        <!-- Botão de envio -->
+                        <button type="submit" class="submit-btn"> <!-- Botão de submit -->
+                            <span>Enviar Mensagem</span> <!-- Texto do botão -->
+                            <i class="fas fa-paper-plane"></i> <!-- Ícone de envio -->
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer> <!-- Rodapé da página -->
+        <div class="container-footer"> <!-- Container para centralizar conteúdo -->
+            <p>&copy; 2025 Laís Fátima Siqueira. Todos os direitos reservados.</p> <!-- Copyright -->
+        </div>      
+    </footer>
+
+    <!-- Botão voltar ao topo -->
+    <button id="back-to-top" class="back-to-top-btn" title="Voltar ao topo"> <!-- Botão fixo com tooltip -->
+        <i class="fas fa-chevron-up"></i> <!-- Ícone de seta para cima -->
+    </button>
+
+    <!-- Script JavaScript -->
+    <script src="script-commented.js"></script> <!-- Importação do arquivo JavaScript -->
+</body>
+</html>
+

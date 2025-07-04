@@ -1,0 +1,981 @@
+/* ===== RESET E CONFIGURAÇÕES GLOBAIS ===== */
+
+/* Reset universal - remove margens e paddings padrão de todos os elementos */
+* {
+    margin: 0; /* Remove margem padrão */
+    padding: 0; /* Remove padding padrão */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura/altura */
+}
+
+/* Variáveis CSS customizadas - facilita manutenção e consistência */
+:root {
+    /* ===== CORES PRINCIPAIS ===== */
+    --primary-dark: #0a0a0a; /* Cor primária escura (preto profundo) */
+    --secondary-dark: #1a1a2e; /* Cor secundária escura (azul muito escuro) */
+    --accent-blue: #16213e; /* Azul de destaque médio */
+    --light-blue: #0f3460; /* Azul mais claro */
+    --text-light: #ffffff; /* Cor do texto claro (branco) */
+    --text-gray: #b8b8b8; /* Cor do texto cinza */
+    --accent-color: #00d4ff; /* Cor de destaque principal (azul ciano) */
+    --glass-bg: rgba(255, 255, 255, 0.1); /* Fundo com efeito de vidro */
+    --glass-border: rgba(255, 255, 255, 0.2); /* Borda com efeito de vidro */
+    
+    /* ===== TIPOGRAFIA ===== */
+    --font-family: 'Inter', sans-serif; /* Família de fonte principal */
+    --font-size-base: 16px; /* Tamanho base da fonte */
+    --font-size-lg: 18px; /* Fonte grande */
+    --font-size-xl: 24px; /* Fonte extra grande */
+    --font-size-2xl: 32px; /* Fonte 2x extra grande */
+    --font-size-3xl: 48px; /* Fonte 3x extra grande */
+    
+    /* ===== ESPAÇAMENTOS ===== */
+    --spacing-xs: 0.5rem; /* Espaçamento extra pequeno (8px) */
+    --spacing-sm: 1rem; /* Espaçamento pequeno (16px) */
+    --spacing-md: 1.5rem; /* Espaçamento médio (24px) */
+    --spacing-lg: 2rem; /* Espaçamento grande (32px) */
+    --spacing-xl: 3rem; /* Espaçamento extra grande (48px) */
+    --spacing-2xl: 4rem; /* Espaçamento 2x extra grande (64px) */
+    
+    /* ===== TRANSIÇÕES ===== */
+    --transition-fast: 0.2s ease; /* Transição rápida */
+    --transition-normal: 0.3s ease; /* Transição normal */
+    --transition-slow: 0.5s ease; /* Transição lenta */
+}
+
+/* ===== TEMA CLARO ===== */
+/* Sobrescreve as variáveis quando a classe light-theme é aplicada */
+body.light-theme {
+    --primary-dark: #ffffff; /* Fundo branco no tema claro */
+    --secondary-dark: #f8f9fa; /* Fundo cinza claro */
+    --accent-blue: #e3f2fd; /* Azul muito claro */
+    --light-blue: #bbdefb; /* Azul claro */
+    --text-light: #212529; /* Texto escuro no tema claro */
+    --text-gray: #6c757d; /* Cinza mais escuro */
+    --accent-color: #007bff; /* Azul padrão */
+    --glass-bg: rgba(0, 0, 0, 0.1); /* Efeito de vidro escuro */
+    --glass-border: rgba(0, 0, 0, 0.2); /* Borda escura */
+}
+
+/* ===== CONFIGURAÇÕES DE FONTE GRANDE ===== */
+/* Aumenta todos os tamanhos de fonte quando a classe font-large é aplicada */
+body.font-large {
+    --font-size-base: 20px; /* Fonte base maior */
+    --font-size-lg: 22px; /* Fonte grande maior */
+    --font-size-xl: 28px; /* Fonte XL maior */
+    --font-size-2xl: 36px; /* Fonte 2XL maior */
+    --font-size-3xl: 52px; /* Fonte 3XL maior */
+}
+
+/* ===== ESTILOS DO BODY ===== */
+body {
+    font-family: var(--font-family); /* Aplica a fonte Inter */
+    font-size: var(--font-size-base); /* Tamanho base da fonte */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+    color: var(--text-light); /* Cor do texto */
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 50%, var(--accent-blue) 100%); /* Gradiente de fundo */
+    min-height: 100vh; /* Altura mínima da viewport */
+    overflow-x: hidden; /* Remove scroll horizontal */
+    transition: all var(--transition-normal); /* Transição suave para mudanças */
+}
+
+/* ===== CONTAINER GLOBAL ===== */
+/* Container responsivo para centralizar conteúdo */
+.container {
+    max-width: 1200px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 var(--spacing-md); /* Padding lateral */
+    text-align: center;
+    margin-top: 150px;
+}
+
+.container_competencias {
+    h2 {  
+    text-align: center;
+    margin-top: 30px;   
+    margin-left: 400px; 
+    color: #00bcd4;  
+    }
+}
+
+/* ===== HEADER ===== */
+/* Cabeçalho fixo com efeito de vidro */
+.header {
+    position: fixed; /* Posição fixa no topo */
+    top: 0; /* Alinhado ao topo */
+    left: 0; /* Alinhado à esquerda */
+    right: 0; /* Alinhado à direita */
+    z-index: 1000; /* Z-index alto para ficar sobre outros elementos */
+    background: var(--glass-bg); /* Fundo com efeito de vidro */
+    backdrop-filter: blur(20px); /* Filtro de desfoque para efeito de vidro */
+    -webkit-backdrop-filter: blur(20px); /* Compatibilidade com Safari */
+    border-bottom: 1px solid var(--glass-border); /* Borda inferior sutil */
+    padding: var(--spacing-sm) 0; /* Padding vertical */
+    transition: all var(--transition-normal); /* Transição suave */
+    height: 70px;
+}
+
+/* ===== CONTROLES DE ACESSIBILIDADE ===== */
+/* Container dos botões de acessibilidade */
+.accessibility-controls {
+    position: absolute; /* Posicionamento absoluto */
+    left: var(--spacing-md); /* Distância da esquerda */
+    top: 50%; /* 50% do topo */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    display: flex; /* Layout flexível */
+    gap: var(--spacing-xs); /* Espaço entre botões */
+}
+
+/* Estilo dos botões de acessibilidade */
+.accessibility-btn {
+    background: var(--glass-bg); /* Fundo com efeito de vidro */
+    border: 1px solid var(--glass-border); /* Borda sutil */
+    color: var(--text-light); /* Cor do texto */
+    padding: var(--spacing-xs); /* Padding interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: all var(--transition-fast); /* Transição rápida */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidade Safari */
+    width: 40px; /* Largura fixa */
+    height: 40px; /* Altura fixa */
+    display: flex; /* Layout flexível */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+/* Efeito hover dos botões de acessibilidade */
+.accessibility-btn:hover {
+    background: var(--accent-color); /* Muda cor de fundo */
+    transform: translateY(-2px); /* Move para cima */
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3); /* Adiciona sombra */
+}
+
+/* ===== NAVEGAÇÃO PRINCIPAL ===== */
+/* Container da navegação */
+.main-nav {
+    display: flex; /* Layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    position: relative; /* Posicionamento relativo */
+    margin-top: 20px;
+}
+
+/* Lista do menu */
+.nav-menu {
+    display: flex; /* Layout flexível horizontal */
+    list-style: none; /* Remove marcadores da lista */
+    gap: var(--spacing-xl); /* Espaço entre itens */
+    margin: 0; /* Remove margem */
+    padding: 0; /* Remove padding */
+}
+
+/* Links de navegação */
+.nav-link {
+    color: var(--text-light); /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: 500; /* Peso da fonte médio */
+    padding: var(--spacing-xs) var(--spacing-md); /* Padding interno */
+    border-radius: 25px; /* Bordas muito arredondadas */
+    transition: all var(--transition-normal); /* Transição suave */
+    position: relative; /* Para o pseudo-elemento */
+    overflow: hidden; /* Esconde overflow para efeito */
+}
+
+/* Pseudo-elemento para efeito de brilho */
+.nav-link::before {
+    content: ''; /* Conteúdo vazio */
+    position: absolute; /* Posicionamento absoluto */
+    top: 0; /* Topo */
+    left: -100%; /* Começa fora da tela à esquerda */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */    
+    transition: left var(--transition-slow); /* Transição da posição */
+}
+
+/* Efeito hover - move o brilho */
+.nav-link:hover::before {
+    left: 100%; /* Move para fora da tela à direita */
+}
+
+/* Efeito hover do link */
+.nav-link:hover {
+    background: var(--glass-bg); /* Fundo com efeito de vidro */
+    color: var(--accent-color); /* Cor de destaque */
+    transform: translateY(-2px); /* Move para cima */
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2); /* Sombra sutil */
+}
+
+/* ===== MENU HAMBURGER ===== */
+/* Container do menu hamburger (mobile) */
+.hamburger {
+    display: none; /* Escondido por padrão */
+    flex-direction: column; /* Layout vertical */
+    cursor: pointer; /* Cursor de ponteiro */
+    gap: 4px; /* Espaço entre linhas */
+}
+
+/* Linhas do hamburger */
+.hamburger span {
+    width: 25px; /* Largura das linhas */
+    height: 3px; /* Altura das linhas */
+    background: var(--text-light); /* Cor das linhas */
+    transition: all var(--transition-normal); /* Transição suave */
+    border-radius: 2px; /* Bordas arredondadas */
+}
+
+/* Animação do hamburger ativo - primeira linha */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Rotaciona e move */
+}
+
+/* Animação do hamburger ativo - segunda linha */
+.hamburger.active span:nth-child(2) {
+    opacity: 0; /* Torna invisível */
+}
+
+/* Animação do hamburger ativo - terceira linha */
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px); /* Rotaciona e move */
+}
+
+/* ===== SEÇÕES ===== */
+/* Estilo base para todas as seções */
+section {
+    padding: var(--spacing-2xl) 0; /* Padding vertical grande */
+    min-height: 100vh; /* Altura mínima da viewport */
+    display: flex; /* Layout flexível */
+}
+
+/* ===== SEÇÃO HOME ===== */
+/* Seção principal da página */
+.home-section {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%); /* Gradiente de fundo */
+    position: relative; /* Para pseudo-elementos */
+    overflow: hidden; /* Esconde overflow */
+}
+
+/* Pseudo-elemento para padrão de grid */
+.home-section::before {
+    content: ''; /* Conteúdo vazio */
+    position: absolute; /* Posicionamento absoluto */
+    top: 0; /* Topo */
+    left: 0; /* Esquerda */
+    right: 0; /* Direita */
+    bottom: 0; /* Fundo */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); /* Padrão SVG de grid */
+    opacity: 0.3; /* Opacidade baixa */
+}
+
+/* Container do conteúdo home */
+.home-content {
+    display: grid; /* Layout em grid */
+    grid-template-columns: 1fr; /* Duas colunas iguais */
+    gap: var(--spacing-xl); /* Espaço entre colunas */
+    align-items: center; /* Centraliza verticalmente */
+    position: center; /* Para ficar sobre o pseudo-elemento */
+    z-index: 1; /* Z-index para ficar sobre o fundo */
+    margin-top: 40px;
+}
+
+/* Container do texto home */
+.home-text {
+    animation: slideInLeft 1s ease-out; /* Animação de entrada */
+}
+
+/* Estilo do título principal */
+.fluid {
+    font-family: 'Arial', sans-serif; /* Fonte simples e moderna */
+    font-size: 10rem; /* Texto bem grande */
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 1.1; /* Espaçamento entre as linhas */
+    text-align: center; /* Alinhar texto */
+    text-transform: uppercase; /* Letras maiúsculas */
+    margin: 0;
+}
+
+/* Estilo para o sobrenome */
+.fluid .last-name {
+    display: block; /* Garante que "Siqueira" fique em linha separada */
+    font-size: 10rem; /* Tamanho do sobrenome um pouco menor */
+    color: #00bcd4; /* Cor do sobrenome */
+    margin-top: -20px; /* Aproxima o sobrenome da primeira linha */
+    letter-spacing: 5px; /* Espaçamento entre as letras */
+    text-align: center; /* Alinhar texto */
+}
+
+/* Responsividade: ajuste em telas menores */
+@media (max-width: 768px) {
+    .fluid {
+        font-size: 6rem;
+    }
+    .fluid .last-name {
+        font-size: 5rem;
+    }
+}
+
+/* Subtítulo de boas-vindas */
+.welcome-subtitle {
+    font-size: var(--font-size-xl); /* Fonte grande */
+    font-weight: 1000; /* Peso normal */
+    color: var(--text-gray); /* Cor cinza */
+    margin-bottom: var(--spacing-md); /* Margem inferior */
+}
+
+/* Descrição da home */
+.home-description {
+    font-size: var(--font-size-lg); /* Fonte ligeiramente maior */
+    color: var(--text-gray); /* Cor cinza */
+    margin-bottom: var(--spacing-lg); /* Margem inferior */
+}
+
+/* Imagem principal */
+.hero-image {
+    max-width: 120%; /* Largura máxima responsiva */
+    height: auto; /* Altura automática */
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Sombra pronunciada */
+    transition: transform var(--transition-normal); /* Transição suave */
+}
+
+/* Efeito hover da imagem */
+.hero-image:hover {
+    transform: scale(1.05) rotate(2deg); /* Aumenta e rotaciona ligeiramente */
+}
+
+/* ===== SEÇÃO SOBRE ===== */
+/* Seção sobre mim */
+.about-section {
+    background: var(--secondary-dark); /* Fundo escuro secundário */
+    position: relative; /* Posicionamento relativo */    
+}
+
+/* Container do conteúdo sobre */
+.about-content {
+    display: grid; /* Layout em grid */
+    grid-template-columns: 2fr 1fr; /* Primeira coluna maior */
+    gap: var(--spacing-xl); /* Espaço entre colunas */
+    align-items: center; /* Centraliza verticalmente */
+    margin-top: 40px;
+}
+
+/* Título das seções */
+.section-title {
+    font-size: var(--font-size-2xl); /* Fonte grande */
+    font-weight: 600; /* Peso semi-bold */
+    margin-bottom: var(--spacing-sm); /* Margem inferior */
+    color: var(--accent-color); /* Cor de destaque */
+}
+
+.container h2 {
+    font-size: var(--font-size-2xl); /* Fonte grande */
+    font-weight: 600; /* Peso semi-bold */
+    margin-bottom: var(--spacing-sm); /* Margem inferior */
+    color: var(--accent-color); /* Cor de destaque */
+}
+
+/* Subtítulo das seções */
+.section-subtitle {
+    font-size: var(--font-size-lg); /* Fonte média */
+    font-weight: 400; /* Peso normal */
+    color: var(--text-gray); /* Cor cinza */
+    margin-bottom: var(--spacing-md); /* Margem inferior */
+}
+
+/* Descrição da seção sobre */
+.about-description {
+    font-size: var(--font-size-base); /* Fonte base */
+    line-height: 1.8; /* Altura da linha maior para legibilidade */
+    margin-bottom: var(--spacing-lg); /* Margem inferior */
+    color: var(--text-gray); /* Cor cinza */
+}
+
+/* Container dos links sociais */
+.social-links {
+    display: flex; /* Layout flexível */
+    gap: var(--spacing-md); /* Espaço entre links */   
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+/* Links das redes sociais */
+.social-link {
+    display: flex; /* Layout flexível */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 50px; /* Largura fixa */
+    height: 50px; /* Altura fixa */
+    background: var(--glass-bg); /* Fundo com efeito de vidro */
+    border: 1px solid var(--glass-border); /* Borda sutil */
+    border-radius: 50%; /* Formato circular */
+    color: var(--text-light); /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    transition: all var(--transition-normal); /* Transição suave */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidade Safari */
+}
+
+/* Efeito hover dos links sociais */
+.social-link:hover {
+    background: var(--accent-color); /* Muda cor de fundo */
+    transform: translateY(-5px) scale(1.1); /* Move para cima e aumenta */
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3); /* Adiciona sombra */
+}
+
+/* Container da imagem sobre */
+img {
+    display: flex; /* Layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 400px; /* Largura fixa */
+    height: 400px; /* Altura fixa */
+    background: var(--glass-bg); /* Fundo com efeito de vidro */
+    border: 2px solid var(--glass-border); /* Borda */
+    border-radius: 50%; /* Formato circular */
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Layout vertical */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    color: var(--text-gray); /* Cor do texto */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidade Safari */
+    transition: all var(--transition-normal); /* Transição suave */
+    font-size: 60px; /* Tamanho grande */
+    margin-bottom: var(--spacing-sm); /* Margem inferior */
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3); /* Adiciona sombra */
+}
+
+/* ===== SEÇÃO SKILLS ===== */
+/* Seção de habilidades */
+.skills-section {
+    background: var(--accent-blue); /* Fundo azul */
+    text-align: center; /* Texto centralizado */
+}
+
+/* Container do carrossel de skills */
+.skills-carousel {
+    display: flex; /* Layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    flex-wrap: wrap; /* Permite quebra de linha */
+    gap: var(--spacing-lg); /* Espaço entre itens */
+    margin-top: var(--spacing-xl); /* Margem superior */
+}
+
+/* Item individual de skill */
+.skill-item {
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Layout vertical */
+    align-items: center; /* Centraliza horizontalmente */
+    gap: var(--spacing-sm); /* Espaço entre elementos */
+    padding: var(--spacing-lg); /* Padding interno */
+    background: var(--glass-bg); /* Fundo com efeito de vidro */
+    border: 1px solid var(--glass-border); /* Borda sutil */
+    border-radius: 15px; /* Bordas arredondadas */
+    transition: all var(--transition-normal); /* Transição suave */
+    cursor: pointer; /* Cursor de ponteiro */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidade Safari */
+    min-width: 120px; /* Largura mínima */
+}
+
+/* Efeito hover do item de skill */
+.skill-item:hover {
+    transform: translateY(-10px) scale(1.05); /* Move para cima e aumenta */
+    background: var(--accent-color); /* Muda cor de fundo */
+    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3); /* Adiciona sombra */
+}
+
+/* Ícone do item de skill */
+.skill-item i {
+    font-size: 40px; /* Tamanho grande */
+    color: var(--accent-color); /* Cor de destaque */
+    transition: all var(--transition-normal); /* Transição suave */
+}
+
+/* Efeito hover do ícone */
+.skill-item:hover i {
+    color: var(--text-light); /* Muda para cor clara */
+    transform: scale(1.2); /* Aumenta o ícone */
+}
+
+/* Texto do item de skill */
+.skill-item span {
+    font-weight: 500; /* Peso médio */
+    color: var(--text-light); /* Cor clara */
+}
+
+/* ===== Grade de Habilidades ===== */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-left: 400px;
+    margin-top: 50px;
+}
+
+/* ===== Cada Categoria de Habilidade (Card) ===== */
+.skill-category {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* ===== Título da Categoria ===== */
+.category-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #00bcd4;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+}
+
+/* ===== Cada Habilidade ===== */
+.skill-item-detailed {
+    margin-bottom: 1.5rem;
+}
+
+/* Cabeçalho da Habilidade */
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+/* Descrição da habilidade */
+.skill-description {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: #bbbbbb;
+}
+
+/* ===== Barra de Progresso ===== */
+.progress-bar {
+    background-color: #2c2c2c;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Preenchimento da barra com animação */
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #00bcd4, #009688);
+    width: 0;
+    transition: width 1s ease-in-out;
+    border-radius: 5px;
+}
+
+/* Animação ao carregar */
+.skill-item-detailed .progress-fill[data-percentage] {
+    width: attr(data-percentage '%'); /* não funciona diretamente em CSS puro */
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 900px) {
+    .skills-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+/* ===== SEÇÃO CONTATO ===== */
+/* Seção de contato */
+.contact-section {
+    background: var(--secondary-dark); /* Fundo escuro secundário */
+}
+
+/* Container do conteúdo de contato */
+.contact-content {
+    display: grid; /* Layout em grid */
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: var(--spacing-xl); /* Espaço entre colunas */
+    align-items: center; /* Centraliza verticalmente */
+    margin-top: -40px;
+}
+
+/* Imagem da seção contato */
+.contact-tech-image {
+    max-width: 100%; /* Largura máxima responsiva */
+    height: auto; /* Altura automática */
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Sombra pronunciada */
+}
+
+/* Formulário de contato */
+.contact-form {
+    background: var(--glass-bg); /* Fundo com efeito de vidro */
+    padding: var(--spacing-xl); /* Padding interno */
+    border-radius: 20px; /* Bordas arredondadas */
+    border: 1px solid var(--glass-border); /* Borda sutil */
+    backdrop-filter: blur(20px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(20px); /* Compatibilidade Safari */
+}
+
+/* Grupo de campos do formulário */
+.form-group {
+    margin-bottom: var(--spacing-md); /* Margem inferior */
+}
+
+/* Labels do formulário */
+.form-group label {
+    display: block; /* Exibição em bloco */
+    margin-bottom: var(--spacing-xs); /* Margem inferior */
+    font-weight: 500; /* Peso médio */
+    color: var(--text-light); /* Cor clara */
+}
+
+/* Inputs e textarea do formulário */
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Largura total */
+    padding: var(--spacing-sm); /* Padding interno */
+    border: 1px solid var(--glass-border); /* Borda sutil */
+    border-radius: 10px; /* Bordas arredondadas */
+    background: var(--glass-bg); /* Fundo com efeito de vidro */
+    color: var(--text-light); /* Cor do texto */
+    font-family: inherit; /* Herda a fonte */
+    font-size: var(--font-size-base); /* Tamanho base */
+    transition: all var(--transition-normal); /* Transição suave */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidade Safari */
+}
+
+/* Estado de foco dos inputs */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none; /* Remove outline padrão */
+    border-color: var(--accent-color); /* Muda cor da borda */
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2); /* Adiciona sombra de foco */
+}
+
+/* Botão de envio */
+.submit-btn {
+    background: linear-gradient(135deg, var(--accent-color), var(--light-blue)); /* Gradiente de fundo */
+    color: var(--text-light); /* Cor do texto */
+    border: none; /* Remove borda */
+    padding: var(--spacing-sm) var(--spacing-lg); /* Padding interno */
+    border-radius: 25px; /* Bordas muito arredondadas */
+    font-size: var(--font-size-base); /* Tamanho base */
+    font-weight: 600; /* Peso semi-bold */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: all var(--transition-normal); /* Transição suave */
+    display: flex; /* Layout flexível */
+    align-items: center; /* Centraliza verticalmente */
+    gap: var(--spacing-xs); /* Espaço entre elementos */
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 100%; /* Largura total */
+}
+
+/* Efeito hover do botão */
+.submit-btn:hover {
+    transform: translateY(-2px); /* Move para cima */
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3); /* Adiciona sombra */
+}
+
+/* Estado ativo do botão */
+.submit-btn:active {
+    transform: translateY(0); /* Volta à posição original */
+}
+
+/* ===== FOOTER ===== */
+/* Rodapé da página */
+.container-footer {
+    background: var(--primary-dark); /* Fundo escuro primário */
+    padding: var(--spacing-lg) 0; /* Padding vertical */
+    text-align: center; /* Texto centralizado */
+    border-top: 1px solid var(--glass-border); /* Borda superior */
+    height: 10px;
+}
+
+/* Texto do footer */
+.container-footer {
+    p {
+    color: var(--text-gray); /* Cor cinza */
+    font-size: 14px; /* Fonte pequena */
+    height: 30px;  
+    }
+}
+
+/* ===== BOTÃO VOLTAR AO TOPO ===== */
+/* Botão fixo para voltar ao topo */
+.back-to-top-btn {
+    position: fixed; /* Posição fixa */
+    bottom: 30px; /* Distância do fundo */
+    right: 30px; /* Distância da direita */
+    width: 50px; /* Largura fixa */
+    height: 50px; /* Altura fixa */
+    background: var(--glass-bg); /* Fundo com efeito de vidro */
+    backdrop-filter: blur(20px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(20px); /* Compatibilidade Safari */
+    border: 1px solid var(--glass-border); /* Borda sutil */
+    border-radius: 15px; /* Bordas arredondadas */
+    color: var(--text-light); /* Cor do texto */
+    cursor: pointer; /* Cursor de ponteiro */
+    z-index: 1000; /* Z-index alto */
+    transition: all var(--transition-normal); /* Transição suave */
+    opacity: 0; /* Invisível por padrão */
+    visibility: hidden; /* Escondido por padrão */
+    transform: translateY(20px); /* Posição inicial mais baixa */
+    display: flex; /* Layout flexível */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    font-size: 18px; /* Tamanho da fonte */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estado visível do botão */
+.back-to-top-btn.visible {
+    opacity: 1; /* Visível */
+    visibility: visible; /* Mostra o elemento */
+    transform: translateY(0); /* Posição normal */
+}
+
+/* Efeito hover do botão voltar ao topo */
+.back-to-top-btn:hover {
+    background: var(--accent-color); /* Muda cor de fundo */
+    transform: translateY(-3px); /* Move para cima */
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.3); /* Adiciona sombra */
+    border-color: var(--accent-color); /* Muda cor da borda */
+}
+
+/* Estado ativo do botão */
+.back-to-top-btn:active {
+    transform: translateY(-1px); /* Posição intermediária */
+}
+
+/* Pseudo-elemento para efeito de pulso */
+.back-to-top-btn::before {
+    content: ''; /* Conteúdo vazio */
+    position: absolute; /* Posicionamento absoluto */
+    top: 0; /* Topo */
+    left: 0; /* Esquerda */
+    right: 0; /* Direita */
+    bottom: 0; /* Fundo */
+    border-radius: 15px; /* Bordas arredondadas */
+    background: var(--accent-color); /* Cor de destaque */
+    opacity: 0; /* Invisível por padrão */
+    z-index: -1; /* Atrás do botão */
+    transition: opacity var(--transition-normal); /* Transição da opacidade */
+}
+
+/* Efeito hover do pseudo-elemento */
+.back-to-top-btn:hover::before {
+    opacity: 0.1; /* Ligeiramente visível */
+}
+
+/* ===== ANIMAÇÕES ===== */
+/* Animação de entrada pela esquerda */
+@keyframes slideInLeft {
+    from {
+        opacity: 0; /* Começa invisível */
+        transform: translateX(-50px); /* Começa deslocado à esquerda */
+    }
+    to {
+        opacity: 1; /* Termina visível */
+        transform: translateX(0); /* Termina na posição normal */
+    }
+}
+
+/* Animação de entrada pela direita */
+@keyframes slideInRight {
+    from {
+        opacity: 0; /* Começa invisível */
+        transform: translateX(50px); /* Começa deslocado à direita */
+    }
+    to {
+        opacity: 1; /* Termina visível */
+        transform: translateX(0); /* Termina na posição normal */
+    }
+}
+
+/* Animação de entrada de baixo para cima */
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* Começa invisível */
+        transform: translateY(30px); /* Começa deslocado para baixo */
+    }
+    to {
+        opacity: 1; /* Termina visível */
+        transform: translateY(0); /* Termina na posição normal */
+    }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+/* Estilos para tablets e dispositivos médios */
+@media (max-width: 768px) {
+    /* Container responsivo */
+    .container {
+        padding: 0 var(--spacing-sm); /* Padding menor */
+    }
+    
+    /* Header mobile */
+    .accessibility-controls {
+        position: relative; /* Muda para posição relativa */
+        left: auto; /* Remove posicionamento à esquerda */
+        top: auto; /* Remove posicionamento do topo */
+        transform: none; /* Remove transformação */
+        order: 1; /* Ordem no flexbox */
+    }
+    
+    /* Navegação mobile */
+    .main-nav {
+        justify-content: space-between; /* Espaça elementos */
+        padding: 0 var(--spacing-sm); /* Padding lateral */
+    }
+    
+    /* Menu mobile */
+    .nav-menu {
+        position: fixed; /* Posição fixa */
+        top: 80px; /* Abaixo do header */
+        left: 0; /* Alinhado à esquerda */
+        right: 0; /* Alinhado à direita */
+        background: var(--glass-bg); /* Fundo com efeito de vidro */
+        backdrop-filter: blur(20px); /* Efeito de desfoque */
+        -webkit-backdrop-filter: blur(20px); /* Compatibilidade Safari */
+        border: 1px solid var(--glass-border); /* Borda */
+        flex-direction: column; /* Layout vertical */
+        gap: 0; /* Remove espaço entre itens */
+        padding: var(--spacing-md); /* Padding interno */
+        transform: translateY(-100vh); /* Escondido acima da tela */
+        transition: transform var(--transition-normal); /* Transição suave */
+        z-index: 999; /* Z-index alto */
+    }
+    
+    /* Menu mobile ativo */
+    .nav-menu.active {
+        transform: translateY(0); /* Posição normal */
+    }
+    
+    /* Links do menu mobile */
+    .nav-link {
+        display: block; /* Exibição em bloco */
+        padding: var(--spacing-sm); /* Padding interno */
+        text-align: center; /* Texto centralizado */
+        border-bottom: 1px solid var(--glass-border); /* Borda inferior */
+    }
+    
+    /* Remove borda do último link */
+    .nav-link:last-child {
+        border-bottom: none; /* Remove borda */
+    }
+    
+    /* Mostra hamburger */
+    .hamburger {
+        display: flex; /* Mostra o menu hamburger */
+    }
+    
+    /* Seções mobile */
+    section {
+        padding: var(--spacing-xl) 0; /* Padding menor */
+        min-height: auto; /* Remove altura mínima */
+    }
+    
+    /* Layouts mobile */
+    .home-content,
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr; /* Uma coluna apenas */
+        gap: var(--spacing-lg); /* Espaço menor */
+        text-align: center; /* Texto centralizado */
+    }
+    
+    /* Títulos mobile */
+    .main-title {
+        font-size: var(--font-size-2xl); /* Fonte menor */
+    }
+    
+    .welcome-subtitle {
+        font-size: var(--font-size-lg); /* Fonte menor */
+    }
+    
+    /* Skills mobile */
+    .skills-carousel {
+        gap: var(--spacing-md); /* Espaço menor */
+    }
+    
+    .skill-item {
+        min-width: 100px; /* Largura menor */
+        padding: var(--spacing-md); /* Padding menor */
+    }
+    
+    .skill-item i {
+        font-size: 30px; /* Ícone menor */
+    }
+    
+    /* Foto mobile */
+    .photo-placeholder {
+        width: 200px; /* Largura menor */
+        height: 200px; /* Altura menor */
+    }
+    
+    .photo-placeholder i {
+        font-size: 40px; /* Ícone menor */
+    }
+}
+
+/* Estilos para smartphones */
+@media (max-width: 480px) {
+    /* Título ainda menor */
+    .main-title {
+        font-size: var(--font-size-xl); /* Fonte menor */
+    }
+    
+    /* Skills em grid */
+    .skills-carousel {
+        grid-template-columns: repeat(2, 1fr); /* Grid de 2 colunas */
+        display: grid; /* Muda para grid */
+    }
+    
+    /* Controles de acessibilidade menores */
+    .accessibility-controls {
+        gap: 4px; /* Espaço menor */
+    }
+    
+    .accessibility-btn {
+        width: 35px; /* Largura menor */
+        height: 35px; /* Altura menor */
+    }
+    
+    /* Botão voltar ao topo menor */
+    .back-to-top-btn {
+        bottom: 20px; /* Posição mais próxima do fundo */
+        right: 20px; /* Posição mais próxima da direita */
+        width: 45px; /* Largura menor */
+        height: 45px; /* Altura menor */
+        font-size: 16px; /* Fonte menor */
+    }
+}
+
+/* ===== SCROLL SUAVE ===== */
+/* Comportamento de scroll suave */
+html {
+    scroll-behavior: smooth; /* Scroll suave para âncoras */
+}
+
+/* ===== SCROLLBAR PERSONALIZADA ===== */
+/* Largura da scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* Largura da barra */
+}
+
+/* Trilha da scrollbar */
+::-webkit-scrollbar-track {
+    background: var(--primary-dark); /* Cor da trilha */
+}
+
+/* Polegar da scrollbar */
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color); /* Cor do polegar */
+    border-radius: 4px; /* Bordas arredondadas */
+}
+
+/* Hover do polegar */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--light-blue); /* Cor no hover */
+}
