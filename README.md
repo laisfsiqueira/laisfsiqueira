@@ -51,7 +51,7 @@ print("Hello World! 🚀")
 
 💼 LinkedIn: https://www.linkedin.com/in/la%C3%ADs-f%C3%A1tima-siqueira-pcd-a8737818b/
 
-🌐 Portfólio: https://laisfsiqueira.github.io/laissiqueira.portifolio//>
+🌐 Portfólio: https://https://laisfsiqueira.github.io/lais.siqueira///>
   </a>
 </p>
 
