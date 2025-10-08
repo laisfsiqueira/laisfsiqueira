@@ -6,7 +6,7 @@
 <h1 align="center">Hello World! 🌎 Eu sou a Laís Fátima Siqueira 👩‍💻</h1>
 
 <p align="center">
-  💻 Desenvolvedora em formação | 📚 Estudante de Ciências da Computação | 🚀 Em transição de carreira
+  💻 Desenvolvedora em formação | 📚 Estudante de Ciência da Computação | 🚀 Em transição de carreira
 </p>
 
 ---
@@ -48,7 +48,7 @@ print("Hello World! 🚀")
 
 📫 Vamos conversar?
 
-✉️ E-mail: lais.siqueira24@gmail.com
+✉️ E-mail: laissiqueira.dev@gmail.com
 
 💼 LinkedIn: https://www.linkedin.com/in/la%C3%ADs-f%C3%A1tima-siqueira-pcd-a8737818b/
 
